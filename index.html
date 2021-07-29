@@ -16,8 +16,9 @@
                 <label for="inp">.mp4, .avi, .mov</label>
                 <input class="form-control" type='file' accept=".mp4, .avi, .mov" id="inp"  />
           </div>
-          <div class="mb-3">
-          <input type="text" id="name" class="form-control d-none">
+          <div class="mb-3 d-none" id="name-box">
+            <label for="name">MP3 name</label>
+          <input type="text" id="name" class="form-control">
           </div>
     </div>
 
@@ -25,7 +26,7 @@
 
     <div class="container d-flex justify-content-center">
         <p id="loading" class="d-none">
-            loading...
+            Please wait, it may take some time...
         </p>
         <a id="link" class="btn d-none btn-primary"></a>
     </div>
