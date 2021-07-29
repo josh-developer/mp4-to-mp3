@@ -9,8 +9,8 @@ let audio_name = getEl("#name");
 
 
 async function convertToAudio() {
-    addClass(loader, 'd-block');
-    removeClass(loader, 'd-none');
+
+    toggleClassBetween(loader, 'd-block', 'd-none')
 
     let sourceVideoFile = input.files[0];
     let targetAudioFormat = 'mp3'
@@ -53,16 +53,10 @@ inp.addEventListener('change', convertToAudio, this);
 
 // helper functions
 
-function addClass(target, cl) {
-    target.classList.add(cl);
-}
-
-function removeClass(target, cl) {
-    target.classList.remove(cl);
-}
 function toggleClassBetween(target, add, remove) {
-    addClass(target, add);
-    removeClass(target, remove);
+    target.classList.add(add);
+    target.classList.remove(remove);
+
 }
 
 function getEl(by) {
