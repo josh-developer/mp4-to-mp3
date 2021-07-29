@@ -19,7 +19,11 @@ async function convertToAudio() {
 
 
 function downloadAudio(convertedAudioDataObj) {
+    let name =  document.querySelector("#name");
+    name.value = convertedAudioDataObj.name;
     
+    name.classList.remove("d-none");
+    name.classList.add("d-block");
     loading.classList.remove("d-block");
     loading.classList.add('d-none');
     a.classList.remove('d-none');
@@ -27,8 +31,11 @@ function downloadAudio(convertedAudioDataObj) {
 
     a.textContent = "Download " + convertedAudioDataObj.format + " version";
     a.href = convertedAudioDataObj.data;
-    a.download = convertedAudioDataObj.name + "." + convertedAudioDataObj.format;
-    
+   
+    a.addEventListener('click', _ =>{       
+        convertedAudioDataObj.name = name.value;
+        a.download = convertedAudioDataObj.name + "." + convertedAudioDataObj.format;
+    })
  
 }
 
